@@ -16,7 +16,11 @@
 #error unsupported Lua version
 #endif
 #else /* LuaJIT */
+#ifdef LJ_GC64
+#include "lj2_gc64/lj_obj.h"
+#else
 #include "lj2/lj_obj.h"
+#endif
 #endif
 
 #ifdef PUCRIOLUA
